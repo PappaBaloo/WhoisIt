@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>WhoIsIt</title>
+    <link rel="stylesheet" href="style.css" />
+    <script defer src="app.js"></script>
+  </head>
+
+  <body>
+    <div class="container">
+      <nav class="header">
+        <h1>WhoIsIt</h1>
+      </nav>
+      <div class="pictureholder">
+        <img id="img" src="" alt="SWAG ERROR!" />
+        <div class="overlay">
+          <div class="hint">HINT!!!</div>
+        </div>
+      </div>
+      <form class="questions" method="post">
+        <fieldset id="questionBox">
+          <legend>Select Answer</legend>
+          <li>
+            <label> <input class="option1" type="radio" name="radio" /> </label>
+            <span class="option1-label"></span>
+          </li>
+          <li>
+            <label> <input class="option2" type="radio" name="radio" /> </label>
+            <span class="option2-label"></span>
+          </li>
+          <li>
+            <label> <input class="option3" type="radio" name="radio" /> </label>
+            <span class="option3-label"></span>
+          </li>
+        </fieldset>
+      </form>
+    </div>
+    <footer class="cashmone">©ash mone</footer>
+  </body>
+</html>
