@@ -1,5 +1,7 @@
 body {
   margin: 0%;
+  /*font-family: "Aboreto", cursive;*/
+  font-family: "Silkscreen", cursive;
 }
 
 li {
@@ -60,6 +62,13 @@ li {
   background-color: blanchedalmond;
   color: #001432;
   margin-top: 5%;
+}
+.counter {
+  grid-area: noth;
+}
+.counter2 {
+  grid-area: noth;
+  padding-top: 30%;
 }
 
 .img:hover + .overlay {

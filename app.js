@@ -46,6 +46,7 @@ let StartOfRound = () => {
   GenerateClue(students[correctStudentId].name[0]);
   ChangeImage(students[correctStudentId].img);
   let options = GetOptions(correctStudentId);
+  slava.currentTime = 3;
 
   option1Label.innerHTML = options[0];
   option2Label.innerHTML = options[1];
@@ -70,6 +71,7 @@ let CorrectAnswer = () => {
   title.innerHTML = "Correct!";
   document.getElementById("navid").style.backgroundColor = "green";
   e.play();
+  rightCounter.innerHTML++;
   setTimeout(NewRound, 3000);
 };
 
@@ -77,6 +79,7 @@ let WrongAnswer = () => {
   title.innerHTML = "Wrong dumbass";
   document.getElementById("navid").style.backgroundColor = "red";
   slava.play();
+  wrongCounter.innerHTML++;
   setTimeout(NewRound, 3000);
 };
 
@@ -140,6 +143,10 @@ const option2Label = document.querySelector(".option2-label");
 
 const option3 = document.querySelector(".option3");
 const option3Label = document.querySelector(".option3-label");
+
+//Counters
+const rightCounter = document.querySelector(".correctCount");
+const wrongCounter = document.querySelector(".wrongCount");
 
 //Audio
 const e = new Audio("audio/e.mp3");
