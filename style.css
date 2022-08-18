@@ -9,14 +9,11 @@ li {
 .container {
   display: grid;
   grid-template-columns: 1fr;
-  grid-template-rows: 1fr 3fr 1fr;
+  grid-template-rows: 1fr 3fr;
   gap: 2% 3%;
   grid-template-areas:
     "header"
-    "picture"
-    "questions"
-    "cashmone"
-    ".";
+    "picture";
 }
 .header {
   display: grid;
@@ -29,13 +26,18 @@ li {
 .pictureholder {
   grid-area: picture;
   display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr;
+  grid-template-areas: "noth img ing";
+  width: 100%;
+  height: 100%;
   place-items: center;
   position: relative;
   width: fit-content;
 }
 .overlay {
   position: absolute;
-  bottom: 100%;
+  bottom: 0%;
   left: auto;
   right: auto;
   background-color: #001432;
@@ -47,7 +49,7 @@ li {
 .questions {
   display: grid;
   place-content: center;
-  grid-area: questions;
+  grid-area: picture;
   padding-bottom: 5%;
 }
 .cashmone {
@@ -57,9 +59,13 @@ li {
   grid-area: cashmone;
   background-color: blanchedalmond;
   color: #001432;
+  margin-top: 5%;
 }
-.pictureholder:hover .overlay {
-  bottom: 0;
+
+.img:hover + .overlay {
+  height: 100%;
+}
+.overlay:hover {
   height: 100%;
 }
 .hint {
@@ -75,7 +81,8 @@ li {
 }
 
 #img {
-  width: 40%;
+  width: 100%;
   height: auto;
   display: block;
+  grid-area: img;
 }

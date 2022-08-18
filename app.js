@@ -37,8 +37,13 @@ let GetOptions = (correctStudentId) => {
   return options;
 };
 
+let GenerateClue = (firstLetterOfName) => {
+  clue.innerHTML = `The first letter is ${firstLetterOfName}`;
+};
+
 let StartOfRound = () => {
   let correctStudentId = RandomStudent();
+  GenerateClue(students[correctStudentId].name[0]);
   ChangeImage(students[correctStudentId].img);
   let options = GetOptions(correctStudentId);
 
@@ -50,12 +55,29 @@ let StartOfRound = () => {
   console.log(options[2]);
 };
 
+let NewRound = () => {
+  title.innerHTML = "Who is it?";
+  document.getElementById("navid").style.backgroundColor = "blanchedalmond";
+  e.pause();
+  e.currentTime = 0;
+  slava.pause();
+  slava.currentTime = 3;
+  uncheckOptions();
+  StartOfRound();
+};
+
 let CorrectAnswer = () => {
-  console.log("Correct");
+  title.innerHTML = "Correct!";
+  document.getElementById("navid").style.backgroundColor = "green";
+  e.play();
+  setTimeout(NewRound, 3000);
 };
 
 let WrongAnswer = () => {
-  console.log("Wrong dumbass");
+  title.innerHTML = "Wrong dumbass";
+  document.getElementById("navid").style.backgroundColor = "red";
+  slava.play();
+  setTimeout(NewRound, 3000);
 };
 
 let SubmitAnswer = (selectedOption) => {
@@ -64,10 +86,6 @@ let SubmitAnswer = (selectedOption) => {
   } else {
     WrongAnswer();
   }
-  uncheckOptions();
-  StartOfRound();
-  console.log(correctAnswer);
-  console.log(selectedOption);
 };
 
 const students = [
@@ -107,7 +125,12 @@ const students = [
 
 let correctAnswer;
 
+const title = document.querySelector(".title");
+title.innerHTML = "Who is it?";
+
 const img = (document.getElementById("img").src = "images/Albin.jpg");
+
+const clue = document.querySelector(".hint");
 
 const option1 = document.querySelector(".option1");
 const option1Label = document.querySelector(".option1-label");
@@ -117,6 +140,10 @@ const option2Label = document.querySelector(".option2-label");
 
 const option3 = document.querySelector(".option3");
 const option3Label = document.querySelector(".option3-label");
+
+//Audio
+const e = new Audio("audio/e.mp3");
+const slava = new Audio("audio/slav.mp3");
 
 //Event listeners
 option1.addEventListener("click", () => {
