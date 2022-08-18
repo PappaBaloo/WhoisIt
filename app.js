@@ -68,7 +68,8 @@ let NewRound = () => {
 };
 
 let CorrectAnswer = () => {
-  title.innerHTML = "Correct!";
+  let randomindex = Math.floor(Math.random() * titleresponse.length);
+  title.innerHTML = titleresponse[randomindex];
   document.getElementById("navid").style.backgroundColor = "green";
   e.play();
   rightCounter.innerHTML++;
@@ -76,7 +77,8 @@ let CorrectAnswer = () => {
 };
 
 let WrongAnswer = () => {
-  title.innerHTML = "Wrong dumbass";
+  let randomindex2 = Math.floor(Math.random() * titleresponse2.length);
+  title.innerHTML = titleresponse2[randomindex2];
   document.getElementById("navid").style.backgroundColor = "red";
   slava.play();
   wrongCounter.innerHTML++;
@@ -124,6 +126,29 @@ const students = [
     name: "Robin",
     img: "images/IMG_1321.jpg",
   },
+];
+
+const titleresponse = [
+  "Correct!",
+  "Lucky guess...",
+  "The hints make it easy",
+  "Wait... How?",
+  "Nothing but good rng",
+  "Are you actually that good?",
+  "Meh, that one was easy",
+  "You should stop cheating",
+  "Great job! Is something I would say if you deserved it",
+  "If you didn't get that one, I would have lost all hope in humanity",
+];
+const titleresponse2 = [
+  "Wrong dumbass",
+  "Cmon, that was easy",
+  "Maybe next time? no who am i kidding",
+  "Please get better",
+  "Maybe you should try and not be bad",
+  "Jeez, did you forget your glasses?",
+  "Are you trying to fail",
+  "You must have hit your head really hard huh?",
 ];
 
 let correctAnswer;
