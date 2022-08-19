@@ -139,6 +139,7 @@ const titleresponse = [
   "You should stop cheating",
   "Great job! Is something I would say if you deserved it",
   "If you didn't get that one, I would have lost all hope in humanity",
+  "I have 2 bodies hidden in my basement",
 ];
 const titleresponse2 = [
   "Wrong dumbass",
@@ -149,6 +150,7 @@ const titleresponse2 = [
   "Jeez, did you forget your glasses?",
   "Are you trying to fail",
   "You must have hit your head really hard huh?",
+  "I have 5 bodies hidden in my basement",
 ];
 
 let correctAnswer;
